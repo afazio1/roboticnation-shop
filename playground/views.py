@@ -4,9 +4,14 @@ from django.http import HttpRequest, HttpResponse
 # MongoDB Connection
 import pymongo
 from pymongo import MongoClient
-from credentials import user, pswd
+from credentials import secrets
 
-cluster = MongoClient(f'mongodb+srv://:@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
+db_user = secrets.get('DATABASE_USER', 'root')
+db_pass = secrets.get('DATABASE_PASSWORD', 'pass')
+print('user: ', db_user)
+print('pass: ', db_pass)
+
+cluster = MongoClient(f'mongodb+srv://{db_user}:{db_pass}@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
 db = cluster["Store"]
 collection = db["Products"]
 

@@ -6,7 +6,7 @@ import pymongo
 from pymongo import MongoClient
 from credentials import user, pswd
 
-cluster = MongoClient(f'mongodb+srv://SJoseph1:Coding22@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
+cluster = MongoClient(f'mongodb+srv://:@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
 db = cluster["Store"]
 collection = db["Products"]
 

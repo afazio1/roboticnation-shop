@@ -5,8 +5,14 @@ from django.http import HttpRequest, HttpResponse
 import pymongo
 from pymongo import MongoClient
 from credentials import user, pswd
-# cluster = MongoClient('mongodb+srv://<user>:<pswd>@robonatty-cluster.cykzb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-# db = client['shop']
+
+cluster = MongoClient(f'mongodb+srv://SJoseph1:Coding22@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
+db = cluster["Store"]
+collection = db["Products"]
+
+blackMug = {"_id": 0, "name": "Mug", "description": "A mug with logo", "price": 10.00, "quantity": 10, "_categoryid": 0, "size": "One-Size", "color": "Black", "productAvailable": True, "sizeAvailable": True, "colorAvailable": True}
+whiteMug = {"_id": 1, "name": "Mug", "description": "A mug with logo", "price": 10.00, "quantity": 7, "_categoryid": 0, "size": "One-Size", "color": "White", "productAvailable": True, "sizeAvailable": True, "colorAvailable": True}
+collection.insert_many([whiteMug, blackMug])
 
 
 # Product Related

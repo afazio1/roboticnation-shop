@@ -12,11 +12,15 @@ db_pass = secrets.get('DATABASE_PASSWORD', 'pass')
 
 cluster = MongoClient(f'mongodb+srv://{db_user}:{db_pass}@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
 db = cluster["Store"]
-collection = db["Payment"]
+collection = db["Products"]
 
-payment = {"_id": 0, "paymentType": "Debit", "allowed": True}
-collection.insert_one(payment)
+myquery = {"quantity": 200}
+newvals = {"$set": {"quantity": 300}
+}
+collection.update_one(myquery, newvals)
 
+for x in collection.find():
+    print(x)
 
 # Product Related
 def index(request):

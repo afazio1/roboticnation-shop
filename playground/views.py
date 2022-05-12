@@ -14,10 +14,9 @@ cluster = MongoClient(f'mongodb+srv://{db_user}:{db_pass}@robonatty-cluster.cykz
 db = cluster["Store"]
 collection = db["Products"]
 
-myquery = {"quantity": 200}
-newvals = {"$set": {"quantity": 300}
-}
-collection.update_one(myquery, newvals)
+myquery = {"_id": 1}
+newval = {"$set": {"ratings": 4.5}}
+collection.update_one(myquery, newval)
 
 for x in collection.find():
     print(x)

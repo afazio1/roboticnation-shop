@@ -12,11 +12,10 @@ db_pass = secrets.get('DATABASE_PASSWORD', 'pass')
 
 cluster = MongoClient(f'mongodb+srv://{db_user}:{db_pass}@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
 db = cluster["Store"]
-collection = db["Products"]
+collection = db["Payment"]
 
-blackMug = {"_id": 0, "name": "Mug", "description": "A mug with logo", "price": 10.00, "quantity": 10, "_categoryid": 0, "size": "One-Size", "color": "Black", "productAvailable": True, "sizeAvailable": True, "colorAvailable": True}
-whiteMug = {"_id": 1, "name": "Mug", "description": "A mug with logo", "price": 10.00, "quantity": 7, "_categoryid": 0, "size": "One-Size", "color": "White", "productAvailable": True, "sizeAvailable": True, "colorAvailable": True}
-collection.insert_many([whiteMug, blackMug])
+payment = {"_id": 0, "paymentType": "Debit", "allowed": True}
+collection.insert_one(payment)
 
 
 # Product Related

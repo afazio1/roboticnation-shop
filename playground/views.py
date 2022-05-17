@@ -4,7 +4,7 @@ from django.http import HttpRequest, HttpResponse
 # MongoDB Connection
 import pymongo
 from pymongo import MongoClient
-from credentials import secrets
+from store.credentials import secrets
 
 db_user = secrets.get('DATABASE_USER', 'root')
 db_pass = secrets.get('DATABASE_PASSWORD', 'pass')

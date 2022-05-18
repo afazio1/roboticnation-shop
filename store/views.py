@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
+from pymongo import MongoClient
+from storefront.credentials import secrets
 
 # MongoDB Connection
-from pymongo import MongoClient
-# client = MongoClient('mongodb+srv://<username>:<password>@<atlas cluster>/<myFirstDatabase>?retryWrites=true&w=majority')
-# db = client['shop']
+
+db_user = secrets.get('DATABASE_USER', 'root')
+db_pass = secrets.get('DATABASE_PASSWORD', 'pass')
+
+cluster = MongoClient(f'mongodb+srv://{db_user}:{db_pass}@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
 
 
 # Product Related

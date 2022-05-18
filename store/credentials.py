@@ -1,4 +1,4 @@
 secrets = {
-    'DATABASE_USER': "SebastianJ0527",
+    'DATABASE_USER': "cy5rtfetrvc",
     'DATABASE_PASSWORD': "Coding22"
 }

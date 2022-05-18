@@ -1,17 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Hairline&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&family=Quicksand:wght@300;500;600&display=swap');
 
-
-@font-face {
-    font-family: 'jazztextregular';
-    src: url('types/jazztext_regular-webfont.woff2') format('woff2'),
-         url('types/jazztext_regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 html, body {
   background-color: #141414;
@@ -67,19 +58,18 @@ p {
 button {
   text-decoration: none;
   background-color: #141414;
-  border-top: 1px solid #E2DACA;
-  border-right: 1px solid #C6B595;
-  border-bottom: 1px solid #C6B595;
-  border-left: 1px solid #E2DACA;
+  border: 1px solid #BDBDBD;
   font-family: 'Rajdhani', sans-serif;
   font-size: large;
   margin: 2%;
-  color: #382E2F;
+  color: #BDBDBD;
+  border-radius: 15px;
   padding: 5px 9px 5px 9px;
 }
 
 button:hover {
     cursor: pointer;
+    border: 1px solid #F9F6F1;
     color: #F9F6F1;
 }
 
@@ -87,11 +77,6 @@ p + ul, p + ol {
   list-style-position: inside;
   color: #24191A;
 }
-
-.leadSheet {
-    display: none;
-}
-
 
 
 th {
@@ -175,7 +160,6 @@ input[type='radio']:checked:after {
     background-color: #72645A;
 }
 
-
 .column {
   float: left;
   width: 50%;
@@ -217,7 +201,7 @@ input[type='radio']:checked:after {
 }
 
 .header .logo {
-    font-family: 'jazztextregular';
+    font-family: 'Playfair Display', serif;
     color: #F1F6EF;
     display: block;
     float: left;
@@ -342,13 +326,6 @@ input[type='radio']:checked:after {
     display: none;
   }
 
-
-  #allLeadSheets img {
-      width: 500px;
-      height: 650px;
-      margin-top: 2%;
-      margin-bottom: 2%;
-  }
 }
 
 .navbutton {
@@ -357,17 +334,6 @@ input[type='radio']:checked:after {
     color: #F9F6F1;
 }
 
-#printIfMusicAvailable {
-    font-size: 130%;
-    color: #181112;
-    font-weight: bold;
-}
-
-#contributeInfo {
-    font-size: 130%;
-    color: #181112;
-    font-style: italic;
-}
 
 #currentPage {
     background-color: rgba(0, 0, 0, 0.25);
@@ -394,11 +360,4 @@ input[type='radio']:checked:after {
 
 #contribute {
     font-size: 85px;
-}
-
-#tiny {
-    font-size: 19px;
-}
-#email:hover {
-    color: #3B684E
 }

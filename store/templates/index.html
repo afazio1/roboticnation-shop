@@ -1,38 +1,21 @@
 {% include 'partials/header.html' %}
-<div class="menu-wrapper">
-    <header class="header">
-        <a href="index.html" class="logo">uh shop</a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
-            <li><a class="navbutton" id="currentPage" href="index.html">HOME</a></li>
-            <li><a class="navbutton" href="page2.html">page 2</a></li>
-            <li><a class="navbutton" href="page3.html">page 3</a></li>
-            <li><a class="navbutton" href="page4.html">page 4</a></li>
-        </ul>
-    </header>
-</div>
-
+{% include 'partials/navbar.html' %}
 
 <body>
     <div><br><br><br><br>
         <header>
-            <h1>header 1</h1>
-            <h2>header 2</h2>
-            <h3>header 3<h3>
+            <h1>this is a header 1</h1>
+            <h2>this is a header 2</h2>
+            <h3>this is a header 3<h3>
         </header>
     </div>
 
     <div>
         <p>this is a paragraph</p>
+        <button>this is a button</button>
     </div>
 
     <br><br>
 
-    <div class="footer">
-        <footer>
-        </footer>
-    </div>
 
-    </html>
     {% include 'partials/footer.html' %}

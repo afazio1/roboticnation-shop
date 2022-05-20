@@ -116,18 +116,18 @@ a:hover {
 }
 
 footer {
-    color: #4B3E3F;
+    color: white;
     text-align: center;
     margin: 3%
 }
 
 footer a {
-    color: #4B3E3F;
+    color: #ADADAD;
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #856F70;
+    color: white;
     text-decoration: none;
 }
 
@@ -358,7 +358,6 @@ input[type='radio']:checked:after {
     color: #F9F6F1;
 }
 
-/* 
 .footer-dark {
   padding:50px 0;
   color:#f0f9ff;
@@ -447,4 +446,4 @@ input[type='radio']:checked:after {
   opacity:0.3;
   font-size:13px;
   margin-bottom:0;
-} */
+} 

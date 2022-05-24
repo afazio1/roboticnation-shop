@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from pymongo import MongoClient
@@ -21,12 +22,12 @@ def index(request):
 
 def products(request):
     if request.method == "GET":
-        category = mycol.find()
-        print(category)
         return render(request, "product_routes/categories.html", category)
 
 def category(request, category):
     if request.method == "GET":
+        category = mycol.find_one()
+        print(category)
         return render(request, "product_routes/category.html", {"category" : category})
 
 def product(request, category, id):

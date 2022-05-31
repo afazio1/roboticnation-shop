@@ -1,1 +1,9 @@
 storefront/credentials.py
+
+playground/__pycache__/
+playground/migrations/__pycache__/
+
+store/__pycache__/
+store/migrations/__pycache__/
+
+storefront/__pycache__/

@@ -30,10 +30,10 @@ def products(request):
 # displays all products in a specific category
 def category(request, category):
     if request.method == "GET":
-        controller = categoryController(category)
+        controller = productsController(category)
         if controller == False:
             return render(request, "error_routes/error.html", {"message": "Unable to retrieve products from our database." })
-        return render(request, "product_routes/categories.html", {"data" : controller})
+        return render(request, "product_routes/products.html", {"data" : controller})
 
 # displays a single product
 def product(request, category, id):
@@ -51,6 +51,7 @@ def productsController():
         categories = category_collection.find({})
         i = 0
         for category in categories:
+            category["id"] = category["_id"]
             categoriesDict[i] = category
             i += 1
     except:
@@ -58,7 +59,7 @@ def productsController():
     return categoriesDict
     
     
-def categoryController(category):
+def productsController(category):
     productsDict = {}
     try:
         products = product_collection.find({"category" : category})

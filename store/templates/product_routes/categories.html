@@ -1,8 +1,12 @@
 {% include '../partials/header.html' %}
 <h1>All Product Categories</h1>
-
 {% for key, value in data.items %}
-<h2>{{ value.name }}</h2>
+<div>
+    <h2>{{ value.name }}</h2>
+    <img src="{{ value.picture }}" alt="">
+    <a href="/products/{{ value.name }}/">Category Page</a>
+</div>
+
 {% endfor %}
 
 {% include '../partials/footer.html' %}

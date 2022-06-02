@@ -3,8 +3,8 @@
 {% for key, value in data.items %}
 <div>
     <h2>{{ value.name }}</h2>
-    <img src="{{ value.picture }}" alt="">
-    <a href="/products/{{ value.name }}/">Category Page</a>
+    <img src="{{ value.image }}" alt="">
+    <a href="/categories/{{ value.name }}/">Category Page</a>
 </div>
 
 {% endfor %}

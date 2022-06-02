@@ -12,7 +12,7 @@ db_pass = secrets.get('DATABASE_PASSWORD', 'pass')
 cluster = MongoClient(f'mongodb+srv://{db_user}:{db_pass}@robonatty-cluster.cykzb.mongodb.net/Store?retryWrites=true&w=majority')
 db = cluster["Store"]
 category_collection = db["Category"]
-product_collection = db["Product"]
+product_collection = db["Products"]
 
 # Product Related
 def index(request):
@@ -30,7 +30,7 @@ def products(request):
 # displays all products in a specific category
 def category(request, category):
     if request.method == "GET":
-        controller = productsController(category)
+        controller = categoryController(category)
         if controller == False:
             return render(request, "error_routes/error.html", {"message": "Unable to retrieve products from our database." })
         return render(request, "product_routes/products.html", {"data" : controller})
@@ -59,7 +59,7 @@ def productsController():
     return categoriesDict
     
     
-def productsController(category):
+def categoryController(category):
     productsDict = {}
     try:
         products = product_collection.find({"category" : category})
@@ -70,6 +70,7 @@ def productsController(category):
     
     except:
         return False
+    print(productsDict)
     return productsDict
 
 def singleProductController(id):

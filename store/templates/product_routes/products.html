@@ -1,3 +1,11 @@
 {% include '../partials/header.html' %}
-<h1>Products for {{category}} Category</h1>
+
+{% for key, value in data.items %}
+<div>
+    <h2>{{ value.name }}</h2>
+    <img src="{{ value.image }}" alt="">
+    <a href="/categories/{{ value.category }}/{{ value.id }}">Singular Product Page</a>
+</div>
+
+{% endfor %}
 {% include '../partials/footer.html' %}

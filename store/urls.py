@@ -6,8 +6,8 @@ urlpatterns = [
     path('', views.index, name='index'),
 
     # products
-    path('products/', views.products),
-    path('products/<str:category>/', views.category),
-    path('products/<str:category>/<str:id>', views.product)
+    path('categories/', views.categories),
+    path('categories/<str:category>/', views.products),
+    path('categories/<str:category>/<str:id>', views.singleProduct)
     
 ]

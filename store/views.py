@@ -33,7 +33,7 @@ def products(request, category):
         controller = categoryController(category)
         if controller == False:
             return render(request, "error_routes/error.html", {"message": "Unable to retrieve products from our database." })
-        return render(request, "product_routes/categories.html", {"data" : controller})
+        return render(request, "product_routes/products.html", {"data" : controller})
 
 <<<<<<< HEAD
 # displays a single product
@@ -55,6 +55,7 @@ def productsController():
         categories = category_collection.find({})
         i = 0
         for category in categories:
+            category["id"] = category["_id"]
             categoriesDict[i] = category
             i += 1
     except:
@@ -73,6 +74,7 @@ def categoryController(category):
     
     except:
         return False
+    print(productsDict)
     return productsDict
 
 def singleProductController(id):

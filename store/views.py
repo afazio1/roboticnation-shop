@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from pymongo import MongoClient
 from storefront.credentials import secrets
+from bson.objectid import ObjectId
 
 # MongoDB Connection
 
@@ -41,7 +42,9 @@ def product(request, category, id):
         singleProduct = product_collection.find_one({"_id": id})
         return render(request, "product_routes/product.html", {"data" : singleProduct})
 
-
+def cart(request):
+    if request.method == "GET":
+        return render(request, "product_routes/cart.html")
 
 # CONTROLLERS
 

@@ -30,17 +30,16 @@ def categories(request):
 # displays all products in a specific category
 def products(request, category):
     if request.method == "GET":
-        productsDict = {}
-        products = product_collection.find({"category" : category})
-        i = 0
-        for product in products:
-            productsDict[i] = product
-            i += 1
-        return render(request, "product_routes/category.html", {"data" : productsDict})
+        controller = categoryController(category)
+        if controller == False:
+            return render(request, "error_routes/error.html", {"message": "Unable to retrieve products from our database." })
+        return render(request, "product_routes/products.html", {"data" : controller})
 
-def singleProduct(request, category, id):
+# displays a single product
+def product(request, category, id):
     if request.method == "GET":
-        return render(request, "product_routes/product.html", {"category" : category, "id": id})
+        singleProduct = product_collection.find_one({"_id": id})
+        return render(request, "product_routes/product.html", {"data" : singleProduct})
 
 
 
@@ -52,6 +51,7 @@ def productsController():
         categories = category_collection.find({})
         i = 0
         for category in categories:
+            category["id"] = category["_id"]
             categoriesDict[i] = category
             i += 1
     except:
@@ -59,5 +59,21 @@ def productsController():
     return categoriesDict
     
     
+def categoryController(category):
+    productsDict = {}
+    try:
+        products = product_collection.find({"category" : category})
+        i = 0
+        for product in products:
+            productsDict[i] = product
+            i += 1
     
-    
+    except:
+        return False
+    print(productsDict)
+    return productsDict
+
+def singleProductController(id):
+    pass
+
+        

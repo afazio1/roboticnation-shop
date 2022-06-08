@@ -22,3 +22,6 @@ def category(request, category):
 def product(request, category, id):
     if request.method == "GET":
         return render(request, "product_routes/product.html", {"category" : category, "id": id})
+
+def cart(request):
+    return render(request, "product_routes/cart.html")

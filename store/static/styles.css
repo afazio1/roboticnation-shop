@@ -7,7 +7,6 @@
 html, body {
   background-color: #141414;
   text-align: center;
-  margin: 0;
 }
 
 * {
@@ -38,8 +37,8 @@ h3 {
     font-family: 'Rajdhani', sans-serif;
     font-weight: normal;
     margin: 0.75%;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 8%;
+    margin-right: 8%;
     font-size: 32px;
 }
 p {
@@ -53,8 +52,6 @@ p, a, ol, ul, table {
   color: #ADADAD;
   font-size: 20px;
 }
-
-
 
 button {
   text-decoration: none;
@@ -100,6 +97,7 @@ th, td {
 
 .row {
   display: flex;
+  float: center;
 }
 
 a {
@@ -125,6 +123,10 @@ footer a {
 footer a:hover {
     color: white;
     text-decoration: none;
+}
+
+#footerpar {
+  font-size: 10px;
 }
 
 input[type='radio']:after {
@@ -165,20 +167,29 @@ input[type='radio']:checked:after {
   position: relative;
   text-align: center;
   font-family: 'Quicksand', sans-serif;
+  font-style: italic;
   font-weight: 400;
   color: #141414;
   font-size: 21px;
   transition: transform .2s;
-  padding: 5%
+  padding: 5%;
 }
+
+
 
 .imgcontainer:hover {
   transform: scale(1.1);
 }
 
-.catcolumn {
+.featuredproducts {
+  float: center;
+}
+
+.quadcolumn {
   float: left;
-  width: 33.33%;
+  width: 25%;
+  position: relative;
+  padding: 5%;
 }
 
 .bottom-left {
@@ -474,3 +485,9 @@ input[type='radio']:checked:after {
   font-size:13px;
   margin-bottom:0;
 } 
+
+/* Cart CSS */
+
+/* .cart-icon{
+
+} */
